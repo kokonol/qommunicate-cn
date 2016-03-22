@@ -17,5 +17,11 @@ int main(int argc, char *argv[])
     Qommunicate *qom = new Qommunicate;
     qom->show();
 
+    // 中文支持(GBK) by kokonol
+    QTextCodec *codec = QTextCodec::codecForName("GBK");
+    QTextCodec::setCodecForTr(codec);
+    QTextCodec::setCodecForLocale(codec);
+    QTextCodec::setCodecForCStrings(codec);
+
     return app.exec();
 }
